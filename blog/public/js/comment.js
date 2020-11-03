@@ -63,7 +63,7 @@ $.ajax({
 
     },
     success(msg) {
-        console.log(msg)
+        // console.log(msg)
         comment = msg;
         renderComment(comment.reverse(), page, limit)
     }
