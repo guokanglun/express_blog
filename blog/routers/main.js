@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
             } else {
                 cate = {}
             }
-            console.log(cate)
+            // console.log(cate)
             Content.find(cate).limit(limit).skip(skip).then(content => {
                 res.render('main/index', {
                     userInfo: req.userInfo,
@@ -53,7 +53,7 @@ router.get('/view', (req, res) => {
         Content.findOne({ _id: categoryId }).then(contentData => {
             let views = ++contentData.views;
             Content.updateOne({ _id: categoryId }, { $set: { views } }).then(() => {})
-            console.log(contentData)
+                // console.log(contentData)
             res.render('main/index2', {
                 userInfo: req.userInfo,
                 contentData,

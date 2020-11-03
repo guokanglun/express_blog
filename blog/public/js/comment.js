@@ -41,7 +41,7 @@ if (user) {
 
             },
             success(msg) {
-                console.log(msg)
+                // console.log(msg)
                 comment = msg;
                 renderComment(comment.reverse(), page, limit)
             }
@@ -92,7 +92,7 @@ function renderComment(comment, page, limit) {
     let maxPage = Math.ceil(comment.length / limit);
     // 每页的起点
     let start = (page - 1) * limit;
-    start = Math.max(start, 1)
+    start = Math.max(start, 0)
         // 每页的终点
     let end = Math.min(start + limit, comment.length)
 

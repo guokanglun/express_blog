@@ -146,7 +146,7 @@ exports.add = function(req, res) {
     Content.findOne({ title }).then(result => {
         if (!result) {
             // 保存数据
-            console.log(1111)
+            // console.log(1111)
             new Content({
                 title,
                 description: jianjie,
@@ -181,7 +181,7 @@ exports.content = function(req, res) {
         page = Math.min(maxPage, page)
         let skip = (page - 1) * limit; // 每页跳过的数量
         Content.find().limit(limit).skip(skip).then((msg) => {
-            console.log(msg)
+            // console.log(msg)
             res.render('admin/content/index', {
                 msg,
                 userInfo: req.userInfo,

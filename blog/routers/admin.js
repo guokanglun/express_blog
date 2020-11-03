@@ -9,7 +9,7 @@ const router = express.Router();
 
 // 设置后台访问权限
 router.use((req, res, next) => {
-    console.log(req.userInfo)
+    // console.log(req.userInfo)
     if (!req.userInfo.isAdmin) {
         res.send('你不是管理员，无法访问该页面')
     } else {
