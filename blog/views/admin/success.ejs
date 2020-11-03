@@ -1,26 +1,27 @@
 <%- include('./layout') %>
 
+    <div class="container-fluid">
+        <ol class='breadcrumb' style="font-size: 14px;">
+            <li>
+                <a href="/">
+                    <%= optionMessage.location %>
+                </a> /
+                <a href="#">
+                    <%= optionMessage.option %>
+                </a>
+            </li>
+        </ol>
 
-    <ol class='breadcrumb' style="font-size: 14px;">
-        <li>
-            <a href="/">
-                <%= optionMessage.location %>
-            </a> /
-            <a href="#">
-                <%= optionMessage.option %>
-            </a>
-        </li>
-    </ol>
+        <h3>
+            <%= optionMessage.option %>
+        </h3>
+        <div class="alert alert-warning" role="alert">错误提示</div>
+        <div class="alert alert-info" role="alert">
+            <%= optionMessage.message %>
+        </div>
 
-    <h3>
-        <%= optionMessage.option %>
-    </h3>
-    <div class="alert alert-warning" role="alert">错误提示</div>
-    <div class="alert alert-info" role="alert">
-        <%= optionMessage.message %>
-    </div>
+        <div class="alert alert-warning" role="alert">
 
-    <div class="alert alert-warning" role="alert">
-
-        <a href="/admin">回到首页</a>
+            <a href="/admin">回到首页</a>
+        </div>
     </div>

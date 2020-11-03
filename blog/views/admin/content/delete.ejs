@@ -1,27 +1,29 @@
 <%- include('../layout') %>
 
-    <ol class='breadcrumb' style="font-size: 14px;">
-        <li>
-            <a href="/admin/content">内容首页</a> /
-            <a href="/admin/content/delete">内容删除</a>
-        </li>
-    </ol>
+    <div class="container-fluid">
+        <ol class='breadcrumb' style="font-size: 14px;">
+            <li>
+                <a href="/admin/content">内容首页</a> /
+                <a href="/admin/content/delete">内容删除</a>
+            </li>
+        </ol>
 
-    <h3>所属分类 --
-        <%= category  %>
-    </h3>
+        <h3>所属分类 --
+            <%= category  %>
+        </h3>
 
-    <form action="" method="POST">
+        <form action="" method="POST">
 
-        <h5>标题</h5>
-        <input type="text" style="width: 100%;" name='title' value='<%= title %>'>
+            <h5>标题</h5>
+            <input type="text" style="width: 100%;" name='title' value='<%= title %>'>
 
-        <h5>简介</h5>
-        <textarea name="jianjie" id="" cols="30" rows="10" style="width: 100%; height: 50px;"> <%= description %> </textarea>
+            <h5>简介</h5>
+            <textarea name="jianjie" id="" cols="30" rows="10" style="width: 100%; height: 50px;"> <%= description %> </textarea>
 
-        <h5>内容</h5>
-        <textarea name="content" id="" cols="30" rows="10" style="width: 100%;"> <%= content %> </textarea>
-        <br>
-        <input type="submit" value='点击删除内容'>
+            <h5>内容</h5>
+            <textarea name="content" id="" cols="30" rows="10" style="width: 100%;"> <%= content %> </textarea>
+            <br>
+            <input type="submit" value='点击删除内容'>
 
-    </form>
+        </form>
+    </div>

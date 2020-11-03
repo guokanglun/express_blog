@@ -1,17 +1,20 @@
 <%- include('../layout') %>
 
-    <ol class='breadcrumb' style="font-size: 14px;">
-        <li>
-            <a href="/admin/category">分类列表</a> /
-            <a href="#">分类添加</a>
-        </li>
-    </ol>
 
-    <h3>分类添加</h3>
+    <div class="container-fluid">
+        <ol class='breadcrumb' style="font-size: 14px;">
+            <li>
+                <a href="/admin/category">分类列表</a> /
+                <a href="#">分类添加</a>
+            </li>
+        </ol>
 
-    <h5>分类名称</h5>
+        <h3>分类添加</h3>
 
-    <form action="/admin/category/add" method="POST">
-        <input type="text" name='category' style='width:100%'> <br> <br>
-        <input type="submit" value="点击添加分类">
-    </form>
+        <h5>分类名称</h5>
+
+        <form action="/admin/category/add" method="POST">
+            <input type="text" name='category' style='width:100%'> <br> <br>
+            <input type="submit" value="点击添加分类">
+        </form>
+    </div>

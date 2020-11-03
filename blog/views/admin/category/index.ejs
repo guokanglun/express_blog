@@ -1,38 +1,43 @@
 <%- include('../layout') %>
 
-    <ol class='breadcrumb' style="font-size: 14px;">
-        <li>
-            <a href="/admin/category">分类列表</a> /
-            <a href="/admin/category/add">分类添加</a>
-        </li>
-    </ol>
-
-    <h3>分类列表</h3>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">name</th>
-                <th scope="col">操作类型</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container-fluid">
+        <ol class='breadcrumb' style="font-size: 14px;">
+            <li>
+                <a href="/admin/category">分类列表</a> /
+                <a href="/admin/category/add">分类添加</a>
+            </li>
+        </ol>
 
 
-            <% for(let i = 0; i< msg.length; i++){ %>
-                <tr>
-                    <td>
-                        <%= msg[i]._id %>
-                    </td>
-                    <td>
-                        <%= msg[i].name %>
-                    </td>
-                    <td style="font-size: 12px;">
-                        <a href="/admin/category/update?category=<%= msg[i].name %>">修改</a> /
-                        <a href="/admin/category/delete?category=<%= msg[i].name %>">删除</a>
-                    </td>
-                </tr>
-                <% } %>
-        </tbody>
-    </table>
+        <div class="container-fluid">
+            <h3>分类列表</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">name</th>
+                        <th scope="col">操作类型</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <% for(let i = 0; i< msg.length; i++){ %>
+                        <tr>
+                            <td>
+                                <%= msg[i]._id %>
+                            </td>
+                            <td>
+                                <%= msg[i].name %>
+                            </td>
+                            <td style="font-size: 12px;">
+                                <a href="/admin/category/update?category=<%= msg[i].name %>">修改</a> /
+                                <a href="/admin/category/delete?category=<%= msg[i].name %>">删除</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>

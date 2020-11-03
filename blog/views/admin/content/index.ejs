@@ -1,59 +1,61 @@
 <%- include('../layout') %>
 
-    <ol class='breadcrumb' style="font-size: 14px;">
-        <li>
-            <a href="/admin/content">内容列表</a> /
-            <a href="/admin/content/add">内容添加</a>
-        </li>
-    </ol>
-
-    <h3>内容列表</h3>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">分类</th>
-                <th scope="col">标题</th>
-                <th scope="col">作者</th>
-                <th scope="col">发布时间</th>
-                <th scope="col">操作类型</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for(let i = 0; i< msg.length; i++){ %>
-                <tr>
-                    <td>
-                        <%= msg[i]._id %>
-                    </td>
-                    <td>
-                        <%= msg[i].category %>
-                    </td>
-                    <td>
-                        <%= msg[i].title %>
-                    </td>
-                    <td>
-                        <%= msg[i].author %>
-                    </td>
-                    <td>
-                        <%= msg[i].time.toLocaleString() %>
-                    </td>
-                    <td style="font-size: 12px;">
-                        <a href="/admin/content/update?id=<%= msg[i]._id %>">修改</a> /
-                        <a href="/admin/content/delete?id=<%= msg[i]._id %>">删除</a>
-                    </td>
-                </tr>
-                <% } %>
-        </tbody>
-    </table>
-
-    <nav aria-label="...">
-        <ul class="pager">
-            <li class="previous"><a href="/admin/content?page=<%= page -1 %>"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+    <div class="container-fluid">
+        <ol class='breadcrumb' style="font-size: 14px;">
             <li>
-                <%= page %> /
-                    <%= maxPage%>
+                <a href="/admin/content">内容列表</a> /
+                <a href="/admin/content/add">内容添加</a>
             </li>
-            <li class="next"><a href="/admin/content?page=<%= page +1 %>">下一页 <span aria-hidden="true">&rarr;</span></a></li>
-        </ul>
-    </nav>
+        </ol>
+
+        <h3>内容列表</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">分类</th>
+                    <th scope="col">标题</th>
+                    <th scope="col">作者</th>
+                    <th scope="col">发布时间</th>
+                    <th scope="col">操作类型</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i< msg.length; i++){ %>
+                    <tr>
+                        <td>
+                            <%= msg[i]._id %>
+                        </td>
+                        <td>
+                            <%= msg[i].category %>
+                        </td>
+                        <td>
+                            <%= msg[i].title %>
+                        </td>
+                        <td>
+                            <%= msg[i].author %>
+                        </td>
+                        <td>
+                            <%= msg[i].time.toLocaleString() %>
+                        </td>
+                        <td style="font-size: 12px;">
+                            <a href="/admin/content/update?id=<%= msg[i]._id %>">修改</a> /
+                            <a href="/admin/content/delete?id=<%= msg[i]._id %>">删除</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous"><a href="/admin/content?page=<%= page -1 %>"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                <li>
+                    <%= page %> /
+                        <%= maxPage%>
+                </li>
+                <li class="next"><a href="/admin/content?page=<%= page +1 %>">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </div>
