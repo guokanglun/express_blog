@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 1300px;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+#header{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+
+    .content{
+        overflow: hidden;
+        width: 1100px;
+        height: 100%;
+        margin: auto;
+        // background-color: aqua;
+
+        img{
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+        }
+
+        ul{
+            float: right;
+            height: 100%;
+            font-size: 0;
+            li{
+                font-size: 16px;
+                display: inline-block;
+                width: 80px;
+                height: 100%;
+                // background-color: blueviolet;
+                text-align: center;
+                line-height: 50px;
+
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color:white;
+                }
+            }
+        }
+
+    }
+}
+
+#content{
+    // overflow: hidden;
+    position: relative;
+    width: 1100px;
+    height: 100px;
+    // background-color: lawngreen;
+    margin: auto;
+
+    img{
+        width: 100%;
+        height: 300px;
+        // margin: auto;
+        margin-top: 10px;
+    }
+    .left{
+        // float: left;
+        position: absolute;
+        left:0;
+        width: 73%;
+        // height: 100px;
+        // background-color: lawngreen;
+        border-left: 2px solid skyblue;
+        border-right: 2px solid skyblue;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+
+        div{
+            width: 100%;
+            border-bottom: 1px solid grey;
+
+            h3{
+                margin: 30px 10px 0;
+            }
+            p{
+                width: 700px;
+                margin-left: 10px;
+                margin-top: 20px;
+                font-size: 14px;
+
+            }
+            .category{
+                display: inline-block;
+                background-color: skyblue;
+                margin-left: 10px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                color:white;
+                padding: 5px;
+                cursor: pointer;
+            }
+            .readall{
+                display: inline-block;
+                background-color: #999;
+                margin-left: 20px;
+                font-size: 14px;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+        }
+        
+    }
+    .right{
+        position: absolute;
+        right:0;
+        width: 25%;
+        // height: 500px;
+        background-color: skyblue;
+
+        .top{
+            width: 100%;
+            height: 50px;
+            background-color: springgreen;
+
+            div{
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                background-color: tan;
+                text-align: center;
+                line-height: 50px;
+
+                &.login{
+                    margin-left: 50px;
+                    border-bottom: 2px solid blue;
+                }
+
+                &.register{
+                    margin-left: 50px;
+                }
+            }
+        }
+
+        .box1{
+            span{
+                display: block;
+                width: 80%;
+                height: 50px;
+                line-height: 50px;
+                font-size: 14px;
+                text-align: right;
+                color:red;
+            }
+            input{
+                width: 80%;
+                height: 25px;
+                margin-top: 20px;
+                margin-left: 20px;
+                
+                &.bottom{
+                    background-color: turquoise;
+                    color:white;
+                    height: 40px;
+                    margin-bottom: 20px;
+                    margin-top: -20px;
+                }
+            }
+        }
+
+        .box3{
+            margin: 20px;
+        
+
+            a{
+                display: block;
+                margin-top: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+}

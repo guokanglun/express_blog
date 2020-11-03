@@ -1,0 +1,22 @@
+<%- include('../layout') %>
+
+    <ol class='breadcrumb' style="font-size: 14px;">
+        <li>
+            <a href="/admin/category">分类列表</a> /
+            <a href="#">分类修改</a>
+        </li>
+    </ol>
+
+    <h3>
+        分类删除--
+        <%= category %>
+    </h3>
+
+    <h5>分类名称</h5>
+
+    <!-- action="/admin/category/update" -->
+    <!-- post请求  form 表单如果不写action， 则默认提交到当前地址 -->
+    <form method="POST">
+
+        <input type="submit" value="点击删除分类名称">
+    </form>

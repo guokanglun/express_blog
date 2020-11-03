@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div id="blog">
+        <div id="header">
+            <div class="content">
+                <img src="/images/logo.jpeg" alt="">
+                <ul>
+                    <li>
+                        <a href="/">
+                            首页
+                        </a>
+                    </li>
+                    <% for(let i = 0; i< result.length; i++){ %>
+                        <li>
+                            <a href="/?category=<%= result[i].name %>">
+                                <%= result[i].name %>
+                            </a>
+                        </li>
+                        <% } %>
+
+                            <!-- <li>
+                        <a href="#"> javascript </a>
+                    </li>
+                    <li>
+                        <a href="#"> css </a>
+                    </li>
+                    <li>
+                        <a href="#"> vue </a>
+                    </li>
+                    <li>
+                        <a href="#"> html </a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <img src="/images/top.jpg" alt="">
+            <div class="left">
+
+                <% for(let i = 0; i<content.length; i++){ %>
+                    <div>
+                        <a href="/view?contentId=<%= content[i]._id %>">
+
+                            <h3>
+                                <%= content[i].title %>
+                            </h3>
+                            <p>
+                                <%= content[i].description %>
+                            </p>
+                            <span class='category'><%= content[i].category %></span>
+                            <span class='readall'>阅读全文</span>
+                            <span class='time'> <%= content[i].time.toLocaleString() %> </span>
+                        </a>
+
+                    </div>
+                    <% } %>
+
+                        <div class="page">
+                            <a href="/?category=<%= category %>&page=<%= page-1 %>">
+                                <div class="pre">上一页</div>
+                            </a>
+
+                            <a href="/?category=<%= category %>&page=<%= page+1 %>">
+                                <div class="next">下一页</div>
+                            </a>
+
+                        </div>
+
+            </div>
+            <div class="right">
+
+                <div class="top">
+                    <div class='login cur'>登录</div>
+                    <div class='register'>注册</div>
+                </div>
+
+                <% if( !userInfo ){ %>
+                    <!-- 登录 -->
+                    <div class="box1" style="display: block;">
+                        <input type="text" placeholder="用户名"> <br>
+                        <input type="password" placeholder="密码"> <br>
+                        <span></span>
+                        <input type="button" value='登录' class='bottom'>
+                    </div>
+
+                    <!-- 注册 -->
+                    <div class="box2" style="display: none;">
+                        <input type="text" placeholder="用户名"> <br>
+                        <input type="password" placeholder="密码"> <br>
+                        <input type="password" placeholder="确认密码"> <br>
+                        <span></span>
+                        <input type="button" value='注册' class='bottom'>
+                    </div>
+                    <% }else{ %>
+                        <!-- 登录成功 -->
+                        <div class="box3">
+                            <% if(userInfo.isAdmin){ %>
+                                欢迎， <span><%= userInfo.username %></span>
+                                <span><a href="/admin">进入后台管理系统 </a></span><br>
+
+                                <% }else{ %>
+                                    欢迎， <span><%= userInfo.username %></span>
+                                    <% } %>
+
+                                        <span id='logout' style="cursor: pointer;"> 退出 </span>
+                        </div>
+                        <% }%>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src='/js/main.js'></script>
+
+</html>

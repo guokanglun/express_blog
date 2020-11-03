@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index2.css">
+</head>
+
+<body>
+    <div id="blog">
+        <div id="header">
+            <div class="content">
+                <a href="/">
+                    <img src="/images/logo.jpeg" alt="">
+                </a>
+
+                <ul>
+                    <li>
+                        <a href="/">
+                            首页
+                        </a>
+                    </li>
+                    <% for(let i = 0; i< result.length; i++){ %>
+                        <li>
+                            <a href="/?category=<%= result[i].name %>">
+                                <%= result[i].name %>
+                            </a>
+                        </li>
+                        <% } %>
+
+                            <!-- <li>
+                        <a href="#"> javascript </a>
+                    </li>
+                    <li>
+                        <a href="#"> css </a>
+                    </li>
+                    <li>
+                        <a href="#"> vue </a>
+                    </li>
+                    <li>
+                        <a href="#"> html </a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <img src="/images/top.jpg" alt="">
+            <!--  -->
+            <div class="left">
+                <div class="top">
+                    <div id='contentId' style="display: none;">
+                        <%= contentData._id %>
+                    </div>
+                    <h3>
+                        <%= contentData.title %>
+                    </h3>
+                    <div class="author">
+                        作者: <span> <%= contentData.author %> </span>
+                    </div>
+                    <div class="time">
+                        时间: <span><%= contentData.time.toLocaleString() %></span>
+                    </div>
+                    <div class="views">
+                        阅读量: <span><%= contentData.views %></span>
+                    </div>
+                    <div class="comment">
+                        评论数: <span><%= contentData.comment.length %></span>
+                    </div>
+                    <div class="content">
+                        <%= contentData.content %>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="comments">评论</div>
+                    <div class="tips">您还没有登录，请先登录</div>
+                    <input class='inp' type="text" placeholder="请留下你的评论">
+                    <input class='btn' type="submit" value='提交'>
+
+                    <ul class="allcomments">
+                        <!-- 所有评论 -->
+
+                    </ul>
+
+                    <div class="page">
+
+                        <span class='pre'>上一页</span>
+                        <span class='center'>  </span>
+                        <span class='next'>下一页</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+
+                <div class="top">
+                    <div class='login cur'>登录</div>
+                    <div class='register'>注册</div>
+                </div>
+
+                <% if( !userInfo ){ %>
+                    <!-- 登录 -->
+                    <div class="box1" style="display: block;">
+                        <input type="text" placeholder="用户名"> <br>
+                        <input type="password" placeholder="密码"> <br>
+                        <span></span>
+                        <input type="button" value='登录' class='bottom'>
+                    </div>
+
+                    <!-- 注册 -->
+                    <div class="box2" style="display: none;">
+                        <input type="text" placeholder="用户名"> <br>
+                        <input type="password" placeholder="密码"> <br>
+                        <input type="password" placeholder="确认密码"> <br>
+                        <span></span>
+                        <input type="button" value='注册' class='bottom'>
+                    </div>
+                    <% }else{ %>
+                        <!-- 登录成功 -->
+                        <div class="box3">
+                            <% if(userInfo.isAdmin){ %>
+                                欢迎， <span id='username'><%= userInfo.username %></span>
+                                <span><a href="/admin">进入后台管理系统 </a></span><br>
+
+                                <% }else{ %>
+                                    欢迎， <span><%= userInfo.username %></span>
+                                    <% } %>
+
+                                        <span id='logout' style="cursor: pointer;"> 退出 </span>
+                        </div>
+                        <% }%>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src='/js/main.js'></script>
+<script src='/js/comment.js'></script>
+
+</html>

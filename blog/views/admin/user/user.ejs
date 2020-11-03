@@ -1,0 +1,52 @@
+<%- include('../layout') %>
+
+    <ol class='breadcrumb' style="font-size: 14px;">
+        <li>
+            <a href="/">用户首页</a> /
+            <a href="#">用户列表</a>
+        </li>
+    </ol>
+
+    <h3>用户列表</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">用户名</th>
+                <th scope="col">密码</th>
+                <th scope="col">是否是管理员</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <% for(let i = 0; i< msg.length; i++){ %>
+                <tr>
+                    <td>
+                        <%= msg[i]._id %>
+                    </td>
+                    <td>
+                        <%= msg[i].username %>
+                    </td>
+                    <td>
+                        <%= msg[i].password %>
+                    </td>
+                    <td>
+                        <%= msg[i].isAdmin?'是':'否' %>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous"><a href="/admin/user?page=<%= page -1 %>"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+            <li>
+                <%= page %> /
+                    <%= maxPage%>
+            </li>
+            <li class="next"><a href="/admin/user?page=<%= page +1 %>">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
